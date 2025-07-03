@@ -5,4 +5,14 @@ export default {
     extend: {},
   },
   plugins: [import("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          "base-100": "#ffffff", // override default bg
+          // (optional) define other colors
+        },
+      },
+    ],
+  },
 };
