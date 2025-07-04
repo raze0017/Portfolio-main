@@ -6,16 +6,22 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Skills from "./components/Skills";
+import Navbar from "./components/Navbar";
+import ThemeSwitcher from "./components/ThemeSwitcher";
 function App() {
   return (
     <>
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
+      {/* Page sections */}
+      <>
+        <Navbar />
 
-      <Contact />
-      <Footer />
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </>
     </>
   );
 }

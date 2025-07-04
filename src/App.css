@@ -1,10 +1,13 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cyberpunk, dracula;
+  themes: light --default, dark --prefersdark, cyberpunk, dracula, coffee;
 }
 body {
   font-family: "Orbitron", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
 }

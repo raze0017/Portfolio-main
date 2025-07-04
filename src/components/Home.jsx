@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 function Home() {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-base-200" id="home">
       <div className="hero-content flex flex-col items-center text-primary">
         {/* Static intro text */}
         <div className="text-3xl mb-4">Hi, I'm</div>
