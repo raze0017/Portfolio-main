@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const fullText = `Hi, I'm Abdul Rahman Razeem V. S — a full-stack web developer from Thrissur, Kerala.
 
@@ -13,20 +13,33 @@ Outside of coding, I explore new tools, contribute to open source, and tinker wi
 
 function About() {
   const [displayedText, setDisplayedText] = useState("");
-  const speed = 15; // milliseconds between characters
-
+  const speed = 15;
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+    amount: 0.5,
+  });
   useEffect(() => {
+    if (!isInView || displayedText.length > 0) return;
     let i = 0;
     const interval = setInterval(() => {
       setDisplayedText((prev) => prev + fullText.charAt(i));
       i++;
       if (i >= fullText.length) clearInterval(interval);
     }, speed);
-    return () => clearInterval(interval);
-  }, []);
+    let j = 0;
+    const setChar = setInterval(() => {
+      console.log("Hello world: ", j);
+      j += 1;
+      if (j >= 10) clearInterval(setChar);
+    }, 1000);
+    return () => clearInterval(interval, setChar);
+  }, [isInView]);
 
   return (
     <div
+      ref={ref}
       id="about"
       className="h-screen flex items-center justify-center flex-col px-4"
     >
