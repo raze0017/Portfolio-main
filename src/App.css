@@ -1,13 +1,24 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, cyberpunk, dracula, coffee;
+  themes:
+    light --default,
+    dark --prefersdark,
+    cyberpunk,
+    dracula,
+    coffee;
 }
-body {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
+@font-face {
+  font-family: "myFont";
+  src: url("./assets/TeknafRegular-rv0aB.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
+
+body {
+  font-family: "myFont", sans-serif;
+  letter-spacing: 0.05em; /* adjust value */
+}
+
 html {
   scroll-behavior: smooth;
 }
