@@ -10,10 +10,11 @@ import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
 import ProjectPage from "./pages/ProjectPage";
 import CaseStudyPage from "./pages/CaseStudyPage";
-
+import Analytics from "./components/Analytics";
 function App() {
   return (
     <Router>
+      <Analytics />
       <ScrollToTop />
       <Navbar />
 

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      const path = window.location.pathname.replace("/REPO_NAME/", "");
+      window.location.replace("/Portfolio-main/?/" + path);
+      sessionStorage.setItem(
+        "redirect",
+        window.location.pathname + window.location.search,
+      );
+      window.location.replace("/REPO_NAME/");
+    </script>
+  </head>
+  <body></body>
+</html>
